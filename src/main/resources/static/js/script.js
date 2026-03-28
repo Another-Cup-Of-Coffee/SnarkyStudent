@@ -12,7 +12,7 @@ async function fetchData() {
     // 2. Show based on Course Number
     if (selectedCourse.includes("1093")) {
         precalcBox.classList.remove('hidden');
-    } else if (selectedCourse.includes("1214")) {
+    } else if (selectedCourse.includes("1213")) {
         box1.classList.remove('hidden');
     }
 

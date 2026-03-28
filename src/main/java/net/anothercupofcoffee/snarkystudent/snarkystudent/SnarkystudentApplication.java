@@ -20,7 +20,7 @@ public class SnarkystudentApplication {
         if (selected.contains("1093") || selected.contains("precalculus")) {
             return "MAT 1093: Precalculus. The gatekeeper. Master the unit circle or prepare to retake this in the summer.";
         } 
-        else if (selected.contains("1214") || selected.contains("calculus i")) {
+        else if (selected.contains("1213") || selected.contains("calculus i")) {
             return "MAT 1214: Calculus I. Welcome to the big leagues. Watch out for the 'Chain Rule'.";
         } 
         else {
