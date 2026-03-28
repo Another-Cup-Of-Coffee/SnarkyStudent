@@ -10,9 +10,6 @@ public class SnarkystudentApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(SnarkystudentApplication.class, args);
-
-		// can remove later
-		MinimalWebDriverExample.runWebDriver();
 	}
 
 }
