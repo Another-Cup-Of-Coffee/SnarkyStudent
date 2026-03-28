@@ -5,11 +5,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-<<<<<<< HEAD
-//import net.anothercupofcoffee.snarkystudent.snarkystudent.examples.MinimalWebDriverExample;
-
-=======
->>>>>>> 0b1a4ccddbe7edf63ada0de3632153ce82530a62
 @SpringBootApplication
 public class SnarkystudentApplication {
 
