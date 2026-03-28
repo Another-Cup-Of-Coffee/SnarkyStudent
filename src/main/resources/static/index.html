@@ -2,47 +2,86 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Snarky Student | UTSA Math Helper</title>
 </head>
 <body class="bg-slate-50 font-sans">
 
     <nav class="bg-[#0c2340] p-4 text-white shadow-lg flex justify-between items-center">
-        <h1 class="text-2xl font-black tracking-tighter">SNARKY <span class="text-[#f15a22]">STUDENT</span></h1>
-        <span class="text-sm italic">"Helping you survive UTSA Math since 2026"</span>
+        <h1 class="text-2xl font-black tracking-tighter uppercase">
+            Snarky <span class="text-[#f15a22]">Student</span>
+        </h1>
+        <span class="text-sm italic hidden md:block">"Helping you survive UTSA Math since 2026"</span>
     </nav>
 
     <div class="max-w-6xl mx-auto mt-8 grid grid-cols-1 md:grid-cols-3 gap-8 p-4">
+        
         <div class="space-y-6">
             <div class="bg-white p-6 rounded-xl shadow-md border-l-4 border-[#f15a22]">
                 <h2 class="text-lg font-bold mb-4 text-[#0c2340]">Find Your Class</h2>
-                <label class="block text-sm font-medium text-gray-700">Course Number</label>
-                <select class="mt-1 block w-full p-2 border border-gray-300 rounded-md">
-                    <option>MAT 1093 - Precalculus</option>
-                    <option>MAT 1214 - Calculus I</option>
-                </select>
                 
-                <button onclick="fetchData()" class="mt-6 w-full bg-[#0c2340] text-white py-2 rounded-lg hover:bg-slate-800 transition shadow-lg">
-                    Scan
-                </button>
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Course Number</label>
+                        <select id="courseSelect" class="mt-1 block w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#f15a22] outline-none">
+                            <option value="1093">MAT 1093 - Precalculus</option>
+                            <option value="1214">MAT 1214 - Calculus I</option>
+                        </select>
+                    </div>
+                    
+                    <button onclick="fetchData()" class="w-full bg-[#0c2340] text-white py-3 rounded-lg font-bold hover:bg-slate-800 transition-all shadow-md active:scale-95">
+                        Scan Bluebook Data
+                    </button>
+                </div>
             </div>
         </div>
 
-        <div class="md:col-span-2 space-y-4">
-            <h2 class="text-xl font-bold text-slate-700 px-2">Advice and Sections</h2>
+        <div class="md:col-span-2 space-y-6">
+            <h2 class="text-xl font-bold text-slate-700 px-2 uppercase tracking-wide">Course Insights</h2>
 
-            <div id="precalc-box" class="hidden bg-purple-50 p-6 rounded-xl border-2 border-purple-200 shadow-md">
-                <h3 class="font-bold text-purple-900 text-lg">MAT 1093: Precalculus Advice</h3>
-                <p class="text-sm text-purple-800 italic mt-2">Mastering precalculus requires a rock-solid foundation in algebra and trigonometry and conceptual understanding rather than just memorizing formulas.</p>
-            </div>
-            
-            <div id="calc-1-box" class="hidden bg-blue-50 p-6 rounded-xl border-2 border-blue-200 shadow-md">
-                <h3 class="font-bold text-blue-900 text-lg">MAT 1214: Calculus I Advice</h3>
-                <p class="text-sm text-blue-800 italic mt-2">Calculus I is the mathematical study of how things change, using the derivative to find the instantaneous rate of change.</p>
+            <div id="precalc-box" class="hidden animate-in fade-in duration-500 bg-purple-50 p-6 rounded-xl border-2 border-purple-200 shadow-md">
+                <div class="border-b border-purple-200 pb-3 mb-4">
+                    <h3 class="font-bold text-purple-900 text-xl">MAT 1093: Precalculus Advice</h3>
+                    
+                </div>
+
+                <h4 class="text-xs font-black uppercase text-purple-400 mb-3 tracking-widest">Top Rated Sections</h4>
+                <div class="space-y-3">
+                    <div class="bg-white p-4 rounded-lg border border-purple-100 shadow-sm flex justify-between items-center">
+                        <div>
+                            <p class="font-bold text-slate-800">Section 001 — Professor A</p>
+                            <p class="text-xs text-slate-500">MWF 11:00 AM | FLN 2.02.02</p>
+                        </div>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg border border-purple-100 shadow-sm flex justify-between items-center">
+                        <div>
+                            <p class="font-bold text-slate-800">Section 004 — Professor B</p>
+                            <p class="text-xs text-slate-500">TR 2:30 PM | MS 3.02.07</p>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <div id="response" class="bg-slate-800 text-orange-400 p-4 rounded-lg font-mono text-sm shadow-inner mt-4 border-b-4 border-orange-500 min-h-[60px]">
-                > System ready. Waiting for Bluebook data scan...
+            <div id="calc-1-box" class="hidden animate-in fade-in duration-500 bg-blue-50 p-6 rounded-xl border-2 border-blue-200 shadow-md">
+                <div class="border-b border-blue-200 pb-3 mb-4">
+                    <h3 class="font-bold text-blue-900 text-xl">MAT 1214: Calculus I Advice</h3>
+                    
+
+                <h4 class="text-xs font-black uppercase text-blue-400 mb-3 tracking-widest">Top Rated Sections</h4>
+                <div class="space-y-3">
+                    <div class="bg-white p-4 rounded-lg border border-blue-100 shadow-sm flex justify-between items-center">
+                        <div>
+                            <p class="font-bold text-slate-800">Section 002 — Professor C</p>
+                            <p class="text-xs text-slate-500">MWF 9:00 AM | MH 2.01.12</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="response" class="bg-slate-900 text-orange-400 p-5 rounded-lg font-mono text-sm shadow-2xl border-b-4 border-[#f15a22] min-h-[80px]">
+                <span class="text-slate-500">// Terminal Output</span><br>
+                > System ready. Awaiting course selection...
             </div>
         </div>
     </div>
