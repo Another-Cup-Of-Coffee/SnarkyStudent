@@ -25,20 +25,7 @@ public class LayeredGraphController {
             "Math 102", List.of("Math 101")
         );
 
-        MutableGraph graph = Factory.mutGraph("courses")
-                .setDirected(true)
-                .graphAttrs()
-                .add("rankdir", "LR");
-
-        for (String course : prereqs.keySet()) {
-            for (String prereq : prereqs.get(course)) {
-                graph.add(Factory.mutNode(prereq).addLink(Factory.mutNode(course)));
-            }
-        }
-
-        return Graphviz.fromGraph(graph)
-                .render(Format.SVG)
-                .toString();
+        return LayeredGraphCreator.buildAndRenderGraph(prereqs);
     }
 
 }
