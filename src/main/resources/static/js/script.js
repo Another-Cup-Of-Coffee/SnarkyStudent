@@ -18,10 +18,10 @@ async function fetchData() {
 
     // 3. Update the Snarky Console from Java
     try {
-        const response = await fetch(`http://localhost:8080/api/data?course=${encodeURIComponent(selectedCourse)}`);
+        const response = await fetch(`http://localhost:8080/api/data?course=${selectedCourseValue}`);
         const text = await response.text();
         responseConsole.innerText = "> " + text;
     } catch (err) {
-        responseConsole.innerText = "> Error: Backend not found at port 8080.";
+        responseConsole.innerText = "";
     }
 }

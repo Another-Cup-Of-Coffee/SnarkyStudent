@@ -2,10 +2,12 @@ package net.anothercupofcoffee.snarkystudent.snarkystudent;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @SpringBootApplication
+@CrossOrigin(origins = "*")
 public class SnarkystudentApplication {
 
 	public static void main(String[] args) {
