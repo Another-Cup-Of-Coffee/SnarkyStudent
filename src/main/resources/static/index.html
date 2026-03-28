@@ -13,7 +13,6 @@
     </nav>
 
     <div class="max-w-6xl mx-auto mt-8 grid grid-cols-1 md:grid-cols-3 gap-8 p-4">
-        
         <div class="space-y-6">
             <div class="bg-white p-6 rounded-xl shadow-md border-l-4 border-[#f15a22]">
                 <h2 class="text-lg font-bold mb-4 text-[#0c2340]">Find Your Class</h2>
@@ -21,8 +20,6 @@
                 <select class="mt-1 block w-full p-2 border border-gray-300 rounded-md">
                     <option>MAT 1093 - Precalculus</option>
                     <option>MAT 1214 - Calculus I</option>
-                    <option>MAT 1224 - Calculus II</option>
-                    <option>MAT 2214 - Calculus III</option>
                 </select>
                 
                 <button onclick="fetchData()" class="mt-6 w-full bg-[#0c2340] text-white py-2 rounded-lg hover:bg-slate-800 transition shadow-lg">
@@ -36,25 +33,17 @@
 
             <div id="precalc-box" class="hidden bg-purple-50 p-6 rounded-xl border-2 border-purple-200 shadow-md">
                 <h3 class="font-bold text-purple-900 text-lg">MAT 1093: Precalculus Advice</h3>
-                <p class="text-sm text-purple-800 italic mt-2">Mastering precalculus requires a rock-solid foundation in algebra and trigonometry, intense daily practice, and conceptual understanding rather than just memorizing formulas.</p>
-            </div> 
-
+                <p class="text-sm text-purple-800 italic mt-2">Mastering precalculus requires a rock-solid foundation in algebra and trigonometry and conceptual understanding rather than just memorizing formulas.</p>
+            </div>
+            
             <div id="calc-1-box" class="hidden bg-blue-50 p-6 rounded-xl border-2 border-blue-200 shadow-md">
                 <h3 class="font-bold text-blue-900 text-lg">MAT 1214: Calculus I Advice</h3>
-                <p class="text-sm text-blue-800 italic mt-2">Calculus I is the mathematical study of how things change, using the derivative to find the instantaneous rate of change and the integral to find the total accumulation under a curve.</p>
+                <p class="text-sm text-blue-800 italic mt-2">Calculus I is the mathematical study of how things change, using the derivative to find the instantaneous rate of change.</p>
             </div>
 
-            <div id="calc-2-box" class="hidden bg-green-50 p-6 rounded-xl border-2 border-green-200 shadow-md">
-                <h3 class="font-bold text-green-900 text-lg">MAT 1224: Calculus II Advice</h3>
-                <p class="text-sm text-green-800 italic mt-2">Focus on mastering integration techniques like Integration by Parts and Partial Fractions, as they are the essential tools for calculating areas, volumes, and the convergence of infinite series.</p>
+            <div id="response" class="bg-slate-800 text-orange-400 p-4 rounded-lg font-mono text-sm shadow-inner mt-4 border-b-4 border-orange-500 min-h-[60px]">
+                > System ready. Waiting for Bluebook data scan...
             </div>
-
-            <div id="calc-3-box" class="hidden bg-orange-50 p-6 rounded-xl border-2 border-orange-200 shadow-md">
-                <h3 class="font-bold text-orange-900 text-lg">MAT 2214: Calculus III Advice</h3>
-                <p class="text-sm text-orange-800 italic mt-2">Welcome to Calculus in 3D.</p>
-            </div>
-
-
         </div>
     </div>
 
