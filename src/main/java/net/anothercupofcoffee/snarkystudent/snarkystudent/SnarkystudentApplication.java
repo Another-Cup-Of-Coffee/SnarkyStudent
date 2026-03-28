@@ -1,6 +1,5 @@
 package net.anothercupofcoffee.snarkystudent.snarkystudent;
 
-import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -9,9 +8,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class SnarkystudentApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SnarkystudentApplication.class, args);
+		// SpringApplication.run(SnarkystudentApplication.class, args);
+        ScrapeDegreeCatalog.testScrape();
 	}
-@GetMapping("/api/data")
+
+    @GetMapping("/api/data")
     public String getData(@RequestParam(value = "course", defaultValue = "Unknown") String course) {
         
         // Use lowercase for everything to avoid bugs
