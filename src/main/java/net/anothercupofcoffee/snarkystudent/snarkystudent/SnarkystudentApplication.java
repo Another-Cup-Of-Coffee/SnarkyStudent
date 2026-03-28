@@ -13,24 +13,16 @@ public class SnarkystudentApplication {
 	}
 @GetMapping("/api/data")
     public String getData(@RequestParam(value = "course", defaultValue = "Unknown") String course) {
-        
-        // Use lowercase for everything to avoid bugs
         String selected = course.toLowerCase();
 
-        if (selected.contains("precalculus")) {
+        if (selected.contains("1093") || selected.contains("precalculus")) {
             return "MAT 1093: Precalculus. The gatekeeper. Master the unit circle or prepare to retake this in the summer.";
         } 
-        else if (selected.contains("calculus i")) { 
+        else if (selected.contains("1214") || selected.contains("calculus i")) {
             return "MAT 1214: Calculus I. Welcome to the big leagues. Watch out for the 'Chain Rule'.";
         } 
-        else if (selected.contains("calculus ii")) {
-            return "MAT 1224: Calculus II. The GPA destroyer. Integration by Parts will be your new best friend.";
-        } 
-        else if (selected.contains("calculus iii")) {
-            return "MAT 2214: Calculus III. It's just Calc I in 3D. Start practicing those saddle points.";
-        } 
         else {
-            return "Snarky System Status: Connected. Scanning for " + course + "... No data found yet.";
+            return "Course not in current scope. System scanning limited to Precalc and Calc I.";
         }
     }
 }
